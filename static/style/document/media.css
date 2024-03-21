@@ -1,0 +1,54 @@
+/* -----------------------------------------------------------------------------
+8. Media
+----------------------------------------------------------------------------- */
+
+.document img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+    object-fit: cover;
+}
+.document .block > img,
+.document figure > img {
+    margin: var(--document_item_margin) 0;
+}
+.document .block > img:first-child,
+.document figure > img:first-of-type {
+    margin-top: 0;
+}
+.document .block > img:last-child,
+.document figure > img:last-of-type {
+    margin-bottom: 0;
+}
+
+.document .frame {
+    position: relative;
+    width: 100%;
+    height: 0;
+    margin: var(--document_item_margin) 0;
+    padding-bottom: 56.25%;
+}
+.document .frame:first-child {
+    margin-top: 0;
+}
+.document .frame:last-child {
+    margin-bottom: 0;
+}
+
+.document .frame > img,
+.document .frame > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: none;
+    object-fit: cover;
+}
+
+@media print {
+    .document .frame {
+        break-inside: avoid;
+    }
+}
