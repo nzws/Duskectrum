@@ -21,16 +21,16 @@ export const menuData: any = [
                         content: '/note/bash/post-SetAutomaticExecutionBashScript',
                     },
                     {
-                        name: 'Play Minecraft Using GPU',
-                        content: '/note/bash/post-PlayMinecraftUsingGPU',
-                    },
-                    {
                         name: 'Backup Volume',
                         content: '/note/bash/post-BackupVolume',
                     },
                     {
                         name: 'Clean Volume',
                         content: '/note/bash/post-CleanVolume',
+                    },
+                    {
+                        name: 'Play Minecraft Using GPU',
+                        content: '/note/bash/post-PlayMinecraftUsingGPU',
                     },
                 ],
             },

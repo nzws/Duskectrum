@@ -61,7 +61,7 @@ exec "$@"`,
                     </ol>
 
                     <p>
-                        しかし、通常はMinecraftがCPUを使用します。
+                        しかし、この状態で起動したMinecraftはCPUを使用します。
                     </p>
 
                     <figure>
