@@ -16,6 +16,10 @@ export const menuData: any = [
                         name: 'Set Automatic Execution Bash Script',
                         content: '/note/bash/post-SetAutomaticExecutionBashScript',
                     },
+                    {
+                        name: 'Utility',
+                        content: '/note/bash/post-Utility',
+                    },
                 ],
             },
         ],

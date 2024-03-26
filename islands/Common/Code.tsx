@@ -11,7 +11,7 @@ type codeProps = {
 export default function Code({ title, line, content }: codeProps): JSX.Element {
     const frameWrapStyle: JSX.CSSProperties = {
         height: 'auto',
-        maxHeight: `calc(${getFrameHeight()}px + 12pt * 1.5 * ${line || 10})`,
+        maxHeight: `calc(${getFrameHeight()}px + 12pt * 1.5 * ${line || 10.5})`,
     };
 
     const frameStyle: JSX.CSSProperties = {
