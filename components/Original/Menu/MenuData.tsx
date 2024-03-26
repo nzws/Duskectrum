@@ -13,12 +13,12 @@ export const menuData: any = [
                 isOpen: false,
                 content: [
                     {
-                        name: 'Set Automatic Execution Bash Script',
-                        content: '/note/bash/post-SetAutomaticExecutionBashScript',
-                    },
-                    {
                         name: 'Utility',
                         content: '/note/bash/post-Utility',
+                    },
+                    {
+                        name: 'Set Automatic Execution Bash Script',
+                        content: '/note/bash/post-SetAutomaticExecutionBashScript',
                     },
                     {
                         name: 'Play Minecraft Using GPU',
