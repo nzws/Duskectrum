@@ -7,6 +7,7 @@ import * as $_app from './routes/_app.tsx';
 import * as $api_help from './routes/api/help.ts';
 import * as $index from './routes/index.tsx';
 import * as $info from './routes/info.tsx';
+import * as $note_bash_post_PlayMinecraftUsingGPU from './routes/note/bash/post-PlayMinecraftUsingGPU.tsx';
 import * as $note_bash_post_SetAutomaticExecutionBashScript from './routes/note/bash/post-SetAutomaticExecutionBashScript.tsx';
 import * as $note_bash_post_Utility from './routes/note/bash/post-Utility.tsx';
 import * as $profile from './routes/profile.tsx';
@@ -39,6 +40,7 @@ const manifest = {
         './routes/api/help.ts': $api_help,
         './routes/index.tsx': $index,
         './routes/info.tsx': $info,
+        './routes/note/bash/post-PlayMinecraftUsingGPU.tsx': $note_bash_post_PlayMinecraftUsingGPU,
         './routes/note/bash/post-SetAutomaticExecutionBashScript.tsx': $note_bash_post_SetAutomaticExecutionBashScript,
         './routes/note/bash/post-Utility.tsx': $note_bash_post_Utility,
         './routes/profile.tsx': $profile,

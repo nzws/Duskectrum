@@ -20,6 +20,10 @@ export const menuData: any = [
                         name: 'Utility',
                         content: '/note/bash/post-Utility',
                     },
+                    {
+                        name: 'Play Minecraft Using GPU',
+                        content: '/note/bash/post-PlayMinecraftUsingGPU',
+                    },
                 ],
             },
         ],
