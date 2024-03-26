@@ -28,6 +28,10 @@ export const menuData: any = [
                         name: 'Backup Volume',
                         content: '/note/bash/post-BackupVolume',
                     },
+                    {
+                        name: 'Clean Volume',
+                        content: '/note/bash/post-CleanVolume',
+                    },
                 ],
             },
         ],
