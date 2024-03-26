@@ -5,6 +5,7 @@ export const frameOption = {
     margin: 4,
     border: 2,
     padding: 8,
+    font: 16,
     colorBackground: '#111e',
     colorHide: '#444e',
     colorTopLeft: '#0f8',

@@ -20,6 +20,14 @@ export type frameProps = {
     children?: JSX.Element;
 };
 
+export const getFrameWidth = () => {
+    return (frameOption.margin + frameOption.border + frameOption.padding) * 2;
+};
+
+export const getFrameHeight = () => {
+    return (frameOption.margin + frameOption.border + frameOption.padding) * 2 + frameOption.font * 1.5 - frameOption.margin;
+};
+
 export default function Frame({ title, width, height, frameStyle, frameType, className, wrapClassName, style, wrapStyle, children }: frameProps): JSX.Element {
     const setFrameTypeFlag = (name: frameType): Signal<boolean> => useSignal(frameType && frameType.includes(name) ? true : false);
     const setFrameType = (name: frameType): boolean => (frameType && frameType.includes(name) ? true : false);
@@ -86,7 +94,7 @@ export default function Frame({ title, width, height, frameStyle, frameType, cla
         const bodyStyle: JSX.CSSProperties = {
             pointerEvents: !hideFlag.value ? 'fill' : 'none',
             overflow: 'scroll',
-            position: 'relative',
+            // position: 'relative',
             display: !minimizeFlag.value ? 'block' : 'none',
             width: '100%',
             height: '100%',
@@ -154,6 +162,8 @@ export default function Frame({ title, width, height, frameStyle, frameType, cla
             Object.assign(frameWrapStyle, {
                 width: 'auto',
                 height: 'auto',
+                maxWidth: 'auto',
+                maxHeight: 'auto',
                 bottom: '0',
                 left: '0',
             });
@@ -162,6 +172,8 @@ export default function Frame({ title, width, height, frameStyle, frameType, cla
             Object.assign(frameWrapStyle, {
                 width: `calc(100% - ${frameOption.safe * 2}px)`,
                 height: `calc(100% - ${frameOption.safe * 2}px)`,
+                minWidth: `calc(100% - ${frameOption.safe * 2}px)`,
+                minHeight: `calc(100% - ${frameOption.safe * 2}px)`,
                 top: '0',
                 left: '0',
             });

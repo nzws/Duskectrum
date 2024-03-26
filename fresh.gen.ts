@@ -7,10 +7,12 @@ import * as $_app from './routes/_app.tsx';
 import * as $api_help from './routes/api/help.ts';
 import * as $index from './routes/index.tsx';
 import * as $info from './routes/info.tsx';
+import * as $note_bash_post_SetAutomaticExecutionBashScript from './routes/note/bash/post-SetAutomaticExecutionBashScript.tsx';
 import * as $profile from './routes/profile.tsx';
 import * as $sample from './routes/sample.tsx';
 import * as $template from './routes/template.tsx';
 import * as $terms from './routes/terms.tsx';
+import * as $Common_Code from './islands/Common/Code.tsx';
 import * as $Original_Frame_Board from './islands/Original/Frame/Board.tsx';
 import * as $Original_Frame_Frame from './islands/Original/Frame/Frame.tsx';
 import * as $Original_Frame_FrameFunction from './islands/Original/Frame/FrameFunction.tsx';
@@ -36,12 +38,14 @@ const manifest = {
         './routes/api/help.ts': $api_help,
         './routes/index.tsx': $index,
         './routes/info.tsx': $info,
+        './routes/note/bash/post-SetAutomaticExecutionBashScript.tsx': $note_bash_post_SetAutomaticExecutionBashScript,
         './routes/profile.tsx': $profile,
         './routes/sample.tsx': $sample,
         './routes/template.tsx': $template,
         './routes/terms.tsx': $terms,
     },
     islands: {
+        './islands/Common/Code.tsx': $Common_Code,
         './islands/Original/Frame/Board.tsx': $Original_Frame_Board,
         './islands/Original/Frame/Frame.tsx': $Original_Frame_Frame,
         './islands/Original/Frame/FrameFunction.tsx': $Original_Frame_FrameFunction,

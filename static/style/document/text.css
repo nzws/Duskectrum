@@ -110,23 +110,26 @@
 }
 
 .document code {
-    padding: 2px;
+    margin: 0 calc(var(--document_font_size) * 0.25);
+    padding: 0 calc(var(--document_font_size) * 0.25);
     word-break: break-all;
     font-family: inherit;
     font-style: normal;
-    font-weight: normal;
-    font-size: calc(var(--document_font_size) - 2px);
+    font-weight: bold;
+    border-radius: calc(var(--document_font_size) * 0.25);
     color: var(--document_color_background);
     background-color: var(--document_color_text);
 }
 .document var {
-    padding: 2px;
+    margin: 0 calc(var(--document_font_size) * 0.25);
+    padding: 0 calc(var(--document_font_size) * 0.25);
     word-break: break-all;
     font-family: inherit;
     font-style: normal;
-    font-weight: normal;
-    font-size: calc(var(--document_font_size) - 2px);
-    border: solid 1px var(--document_color_text);
+    font-weight: bold;
+    border-radius: calc(var(--document_font_size) * 0.25);
+    color: var(--document_color_background);
+    background-color: var(--document_color_half);
 }
 
 .document .red_tc {

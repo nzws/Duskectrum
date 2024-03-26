@@ -5,6 +5,22 @@ export const menuData: any = [
         content: '/',
     },
     {
+        name: 'Note',
+        isOpen: true,
+        content: [
+            {
+                name: 'Bash',
+                isOpen: false,
+                content: [
+                    {
+                        name: 'Set Automatic Execution Bash Script',
+                        content: '/note/bash/post-SetAutomaticExecutionBashScript',
+                    },
+                ],
+            },
+        ],
+    },
+    {
         name: 'Profile',
         content: '/profile',
     },
