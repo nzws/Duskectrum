@@ -35,8 +35,8 @@ exec "$@"`,
     };
 
     const imageStyle: JSX.CSSProperties = {
-        width: '640px',
-        height: '360px',
+        maxWidth: '640px',
+        maxHeight: '360px',
     };
 
     return (
