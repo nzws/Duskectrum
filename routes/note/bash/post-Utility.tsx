@@ -88,6 +88,8 @@ function cpFile() {
         mkdir -p "\${2%/*}"
     fi
 
+    echo "Copy file ... $1 -> $2"
+
     cp -fp "$1" "$2"
 }
 
@@ -97,6 +99,8 @@ function cpFolder() {
     else
         mkdir -p "\${2%/}"
     fi
+
+    echo "Copy folder ... \${1%/}/ -> \${2%/}/"
 
     cp -RTfp "\${1%/}"/ "\${2%/}"/
 }
@@ -108,19 +112,27 @@ function cpZipData() {
         mkdir -p "\${2%/}"
     fi
 
+    echo "Extract file ... $1 -> \${2%/}/"
+
     unzip "$1" -d "\${2%/}"/
 }`,
         changePermission_Timestamp: `#!/bin/bash
 
 function changeDefaultPermission() {
+    echo "Change permission (755) ... $1"
+
     find "$1" -name '*' -print0 | xargs -0 -i chmod 755 {}
 }
 
 function changeMasterPermission() {
+    echo "Change permission (777) ... $1"
+
     find "$1" -name '*' -print0 | xargs -0 -i chmod 777 {}
 }
 
 function changeTimestamp() {
+    echo "Change timestamp ($2) ... $1"
+
     find "$1" -name '*' -print0 | xargs -0 -i touch -c -d "$2" {}
 }`,
         inputData: `#!/bin/bash
