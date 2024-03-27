@@ -74,17 +74,32 @@ const CommonBoard = ({ className, children }: mainProps): JSX.Element => {
             gridTemplateRows: `max-content minmax(0, 2fr) minmax(0, 1fr)`,
         };
 
+        const infoStyle: JSX.CSSProperties = {
+            gridColumn: 'auto',
+            gridRow: '1 / 2',
+        };
+
+        const menuStyle: JSX.CSSProperties = {
+            gridColumn: 'auto',
+            gridRow: '3 / 4',
+        };
+
+        const contentStyle: JSX.CSSProperties = {
+            gridColumn: 'auto',
+            gridRow: '2 / 3',
+        };
+
         return (
             <Main style={mainStyle}>
                 <>
-                    <Frame title='Info' frameStyle='box' frameType={['setHide']} className='document'>
+                    <Frame title='Info' frameStyle='box' wrapStyle={infoStyle} frameType={['setHide']} className='document'>
                         <Info />
                     </Frame>
-                    <Frame title='Content' frameStyle='box' frameType={['setMaximize', 'setHide']} className={className}>
-                        {children}
-                    </Frame>
-                    <Frame title='Menu' frameStyle='box' frameType={['setMaximize', 'setHide']}>
+                    <Frame title='Menu' frameStyle='box' wrapStyle={menuStyle} frameType={['setMaximize', 'setHide']}>
                         <Menu />
+                    </Frame>
+                    <Frame title='Content' frameStyle='box' wrapStyle={contentStyle} frameType={['setMaximize', 'setHide']} className={className}>
+                        {children}
                     </Frame>
                 </>
             </Main>
