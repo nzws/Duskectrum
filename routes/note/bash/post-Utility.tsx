@@ -85,7 +85,7 @@ function cpFile() {
     if [ -d "$2" ]; then
         rm -f "$2"
     else
-        mkdir -p "$(dirname "$2")"
+        mkdir -p "\${2%/*}"
     fi
 
     cp -fp "$1" "$2"
@@ -93,22 +93,22 @@ function cpFile() {
 
 function cpFolder() {
     if [ -d "$2" ]; then
-        rm -rf "$2"/*
+        rm -rf "\${2%/}"/*
     else
-        mkdir -p "$2"
+        mkdir -p "\${2%/}"
     fi
 
-    cp -RTfp "$1"/ "$2"
+    cp -RTfp "\${1%/}"/ "\${2%/}"/
 }
 
 function cpZipData() {
     if [ -d "$2" ]; then
-        rm -rf "$2"/*
+        rm -rf "\${2%/}"/*
     else
-        mkdir -p "$2"
+        mkdir -p "\${2%/}"
     fi
 
-    unzip "$1" -d "$2"
+    unzip "$1" -d "\${2%/}"/
 }`,
         changePermission_Timestamp: `#!/bin/bash
 
@@ -273,6 +273,7 @@ function confirmExecution() {
                     </div>
 
                     <ul>
+                        <li>変数展開とパターンマッチ（<code>{'${変数名(#|##|%|%%)パターン}'}</code>）を用いることでパスを正規化します。</li>
                         <li>複製先にファイルやディレクトリーが存在する場合に対象を削除している（＝複製先を置換している）ため、それを望まない場合は関数内の<code>rm</code>コマンドを削除する必要があります。</li>
                     </ul>
 
