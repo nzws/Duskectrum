@@ -9,18 +9,22 @@ export default function Profile() {
     };
 
     const ProfileItem = ({ name, children }: profileItemProps): JSX.Element => {
-        const contentStyle: JSX.CSSProperties = {
-            marginLeft: 'calc(12pt * 2)',
-        };
-
         return (
             <p class='flex flex-col'>
                 <span>
                     <u>{name}:</u>
                 </span>
-                <span style={contentStyle}>{children}</span>
+                <span style={{ marginLeft: 'calc(12pt * 2)' }}>{children}</span>
             </p>
         );
+    };
+
+    const contentStyle: JSX.CSSProperties = {
+        backgroundColor: 'rgba(0, 0, 0, 0.75)',
+        backgroundBlendMode: 'multiply',
+        backgroundImage: 'url(/image/wallpaper.jpg)',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
     };
 
     const imageStyle: JSX.CSSProperties = {
@@ -34,7 +38,7 @@ export default function Profile() {
                 <title>Profile - Duskectrum</title>
             </Head>
 
-            <Board type='common' className='document'>
+            <Board type='common' style={contentStyle} className='document'>
                 <>
                     <h1>Profile</h1>
 

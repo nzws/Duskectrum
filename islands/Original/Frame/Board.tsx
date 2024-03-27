@@ -8,20 +8,21 @@ import Menu from '../Menu/Menu.tsx';
 type mainProps = {
     type?: string;
     className?: string;
+    style?: JSX.CSSProperties;
     children?: JSX.Element;
 };
 
-const SingleBoard = ({ className, children }: mainProps): JSX.Element => {
+const SingleBoard = ({ className, style, children }: mainProps): JSX.Element => {
     return (
         <Main>
-            <Frame title='Content' frameStyle='box' width='100%' height='100%' frameType={['setHide']} className={className}>
+            <Frame title='Content' frameStyle='box' width='100%' height='100%' frameType={['setHide']} style={style} className={className}>
                 {children}
             </Frame>
         </Main>
     );
 };
 
-const CommonBoard = ({ className, children }: mainProps): JSX.Element => {
+const CommonBoard = ({ className, style, children }: mainProps): JSX.Element => {
     const deviceType = getDeviceType(navigator.userAgent);
 
     if (deviceType !== 'Mobile') {
@@ -60,6 +61,7 @@ const CommonBoard = ({ className, children }: mainProps): JSX.Element => {
                         frameStyle='box'
                         wrapStyle={contentStyle}
                         frameType={['setMinimize', 'setMaximize', 'setHide']}
+                        style={style}
                         className={className}
                     >
                         {children}
@@ -98,7 +100,7 @@ const CommonBoard = ({ className, children }: mainProps): JSX.Element => {
                     <Frame title='Menu' frameStyle='box' wrapStyle={menuStyle} frameType={['setMaximize', 'setHide']}>
                         <Menu />
                     </Frame>
-                    <Frame title='Content' frameStyle='box' wrapStyle={contentStyle} frameType={['setMaximize', 'setHide']} className={className}>
+                    <Frame title='Content' frameStyle='box' wrapStyle={contentStyle} frameType={['setMaximize', 'setHide']} style={style} className={className}>
                         {children}
                     </Frame>
                 </>
@@ -107,13 +109,25 @@ const CommonBoard = ({ className, children }: mainProps): JSX.Element => {
     }
 };
 
-export default function Board({ type, className, children }: mainProps): JSX.Element {
+export default function Board({ type, style, className, children }: mainProps): JSX.Element {
     switch (type) {
         case 'single':
-            return <SingleBoard className={className}>{children}</SingleBoard>;
+            return (
+                <SingleBoard style={style} className={className}>
+                    {children}
+                </SingleBoard>
+            );
         case 'common':
-            return <CommonBoard className={className}>{children}</CommonBoard>;
+            return (
+                <CommonBoard style={style} className={className}>
+                    {children}
+                </CommonBoard>
+            );
         default:
-            return <SingleBoard className={className}>{children}</SingleBoard>;
+            return (
+                <SingleBoard style={style} className={className}>
+                    {children}
+                </SingleBoard>
+            );
     }
 }
