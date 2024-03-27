@@ -33,6 +33,7 @@ import * as $Utility_Info_getDeviceInfo from './islands/Utility/Info/getDeviceIn
 import * as $Utility_Info_getPlaceInfo from './islands/Utility/Info/getPlaceInfo.tsx';
 import * as $Utility_Info_getTimeInfo from './islands/Utility/Info/getTimeInfo.tsx';
 import * as $Utility_alignDigit from './islands/Utility/alignDigit.tsx';
+import * as $Utility_getTimeDisplay from './islands/Utility/getTimeDisplay.tsx';
 import * as $Utility_normalizeVariableName from './islands/Utility/normalizeVariableName.tsx';
 import { type Manifest } from '$fresh/server.ts';
 
@@ -71,6 +72,7 @@ const manifest = {
         './islands/Utility/Info/getPlaceInfo.tsx': $Utility_Info_getPlaceInfo,
         './islands/Utility/Info/getTimeInfo.tsx': $Utility_Info_getTimeInfo,
         './islands/Utility/alignDigit.tsx': $Utility_alignDigit,
+        './islands/Utility/getTimeDisplay.tsx': $Utility_getTimeDisplay,
         './islands/Utility/normalizeVariableName.tsx': $Utility_normalizeVariableName,
     },
     baseUrl: import.meta.url,
