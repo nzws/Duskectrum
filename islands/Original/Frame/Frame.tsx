@@ -5,7 +5,7 @@ import { FrameBox, FrameCard, frameObjectProps } from './FrameObject.tsx';
 import { frameOption } from '../../../components/Original/Frame/FrameData.tsx';
 
 type frameStyle = 'card' | 'box';
-type frameType = 'minimize' | 'setMinimize' | 'maximize' | 'setMaximize' | 'hide' | 'setHide' | 'close' | 'setClose';
+type frameType = 'minimize' | 'setMinimize' | 'maximize' | 'setMaximize' | 'hide' | 'setHide' | 'fold' | 'setFold' | 'close' | 'setClose';
 
 export type frameProps = {
     title?: string;
@@ -35,6 +35,7 @@ export default function Frame({ title, width, height, frameStyle, frameType, cla
     const minimizeFlag = setFrameTypeFlag('minimize');
     const maximizeFlag = setFrameTypeFlag('maximize');
     const hideFlag = setFrameTypeFlag('hide');
+    const foldFlag = setFrameTypeFlag('fold');
     const closeFlag = setFrameTypeFlag('close');
 
     const frameFunctionProps: frameFunctionProps = {
@@ -44,6 +45,8 @@ export default function Frame({ title, width, height, frameStyle, frameType, cla
         maximizeFlag: maximizeFlag,
         setHide: setFrameType('setHide'),
         hideFlag: hideFlag,
+        setFold: setFrameType('setFold'),
+        foldFlag: foldFlag,
         setClose: setFrameType('setClose'),
         closeFlag: closeFlag,
     };
@@ -88,17 +91,17 @@ export default function Frame({ title, width, height, frameStyle, frameType, cla
             zIndex: '1',
             overflow: 'hidden',
             width: '100%',
-            height: '100%',
+            height: !maximizeFlag.value && foldFlag.value ? '0' : '100%',
         };
 
         const bodyStyle: JSX.CSSProperties = {
-            pointerEvents: !hideFlag.value ? 'fill' : 'none',
+            pointerEvents: hideFlag.value || (!maximizeFlag.value && foldFlag.value) ? 'none' : 'fill',
             overflow: 'scroll',
             // position: 'relative',
             display: !minimizeFlag.value ? 'block' : 'none',
             width: '100%',
             height: '100%',
-            opacity: !hideFlag.value ? '1' : '0',
+            opacity: hideFlag.value || (!maximizeFlag.value && foldFlag.value) ? '0' : '1',
         };
 
         if (style) Object.assign(bodyStyle, style);

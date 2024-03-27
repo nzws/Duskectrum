@@ -36,7 +36,7 @@ export default function Home() {
                     title='Sample Frame'
                     height='auto'
                     frameStyle='card'
-                    frameType={['setMinimize', 'setMaximize', 'setHide', 'setClose']}
+                    frameType={['setMinimize', 'setMaximize', 'setHide', 'setFold', 'setClose']}
                     className='document'
                 >
                     <>
@@ -59,6 +59,11 @@ export default function Home() {
                             <ul>
                                 <li>Pressing the "#" button conceals the contents of the frame. Pressing the "=" button again restores it to its original state.</li>
                                 <li>This is an effective function when you need to concentrate on other information, prevent accidental operations, or when the frame contains information that should not be displayed on the screen.</li>
+                            </ul>
+                            <li><b>Fold</b></li>
+                            <ul>
+                                <li>Pressing the "V" button collapses the frame. Pressing the "Z" button again restores it to its original state.</li>
+                                <li>This is an effective function when the contents or operations of the frame are no longer needed.</li>
                             </ul>
                             <li><b>Close</b></li>
                             <ul>
@@ -101,7 +106,7 @@ export default function Home() {
                     title='Sample Frame'
                     height='auto'
                     frameStyle='card'
-                    frameType={['setMinimize', 'setMaximize', 'setHide', 'setClose']}
+                    frameType={['setMinimize', 'setMaximize', 'setHide', 'setFold', 'setClose']}
                     className='document'
                 >
                     <>
@@ -124,6 +129,11 @@ export default function Home() {
                             <ul>
                                 <li>「#」ボタンを押すと枠の内容が隠蔽されます。もう一度「=」ボタンを押すと元に戻ります。</li>
                                 <li>他の情報に集中する、誤操作を防止する、画面上に映すべきではない情報が含まれる場合に効果的な機能です。</li>
+                            </ul>
+                            <li><b>束ねる</b></li>
+                            <ul>
+                                <li>「V」ボタンを押すと枠が折り畳まれます。もう一度「Z」ボタンを押すと元に戻ります。</li>
+                                <li>枠の内容や操作が不要な場合に効果的な機能です。</li>
                             </ul>
                             <li><b>閉じる</b></li>
                             <ul>

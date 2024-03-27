@@ -9,6 +9,8 @@ export type frameFunctionProps = {
     maximizeFlag: Signal<boolean>;
     setHide: boolean;
     hideFlag: Signal<boolean>;
+    setFold: boolean;
+    foldFlag: Signal<boolean>;
     setClose: boolean;
     closeFlag: Signal<boolean>;
 };
@@ -51,6 +53,7 @@ export const FrameFunction = ({ props }: { props: frameFunctionProps }): JSX.Ele
             {props.setMinimize && <Button flag={props.minimizeFlag} falseSymbol='.' trueSymbol='!' falseTitle='> Minimize Frame' trueTitle='> Restore Frame' />}
             {props.setMaximize && <Button flag={props.maximizeFlag} falseSymbol='+' trueSymbol='@' falseTitle='> Maximize Frame' trueTitle='> Restore Frame' />}
             {props.setHide && <Button flag={props.hideFlag} falseSymbol='#' trueSymbol='=' falseTitle='> Hide Frame' trueTitle='> Show Frame' />}
+            {props.setFold && <Button flag={props.foldFlag} falseSymbol='V' trueSymbol='Z' falseTitle='> Fold Frame' trueTitle='> Open Frame' />}
             {props.setClose && <Button flag={props.closeFlag} falseSymbol='X' trueSymbol='O' falseTitle='> Close Frame' trueTitle='> Open Frame' />}
         </div>
     );
