@@ -21,6 +21,10 @@ export const menuData: any = [
                         content: '/note/bash/post-SetAutomaticExecutionBashScript',
                     },
                     {
+                        name: 'Extract Zip Files',
+                        content: '/note/bash/post-ExtractZipFiles',
+                    },
+                    {
                         name: 'Backup Volume',
                         content: '/note/bash/post-BackupVolume',
                     },

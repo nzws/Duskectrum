@@ -9,6 +9,7 @@ import * as $index from './routes/index.tsx';
 import * as $info from './routes/info.tsx';
 import * as $note_bash_post_BackupVolume from './routes/note/bash/post-BackupVolume.tsx';
 import * as $note_bash_post_CleanVolume from './routes/note/bash/post-CleanVolume.tsx';
+import * as $note_bash_post_ExtractZipFiles from './routes/note/bash/post-ExtractZipFiles.tsx';
 import * as $note_bash_post_PlayMinecraftUsingGPU from './routes/note/bash/post-PlayMinecraftUsingGPU.tsx';
 import * as $note_bash_post_SetAutomaticExecutionBashScript from './routes/note/bash/post-SetAutomaticExecutionBashScript.tsx';
 import * as $note_bash_post_Utility from './routes/note/bash/post-Utility.tsx';
@@ -44,6 +45,7 @@ const manifest = {
         './routes/info.tsx': $info,
         './routes/note/bash/post-BackupVolume.tsx': $note_bash_post_BackupVolume,
         './routes/note/bash/post-CleanVolume.tsx': $note_bash_post_CleanVolume,
+        './routes/note/bash/post-ExtractZipFiles.tsx': $note_bash_post_ExtractZipFiles,
         './routes/note/bash/post-PlayMinecraftUsingGPU.tsx': $note_bash_post_PlayMinecraftUsingGPU,
         './routes/note/bash/post-SetAutomaticExecutionBashScript.tsx': $note_bash_post_SetAutomaticExecutionBashScript,
         './routes/note/bash/post-Utility.tsx': $note_bash_post_Utility,
