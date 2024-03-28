@@ -18,9 +18,7 @@ async function createClient() {
 let client: Client | undefined;
 
 export default async function getClient() {
-    if (!client) {
-        client = await createClient();
-    }
+    if (!client) client = await createClient();
 
     return client;
 }
