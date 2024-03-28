@@ -6,6 +6,7 @@ import * as $_404 from './routes/_404.tsx';
 import * as $_app from './routes/_app.tsx';
 import * as $api_getSha256 from './routes/api/getSha256.ts';
 import * as $api_help from './routes/api/help.ts';
+import * as $function_joke from './routes/function/joke.tsx';
 import * as $index from './routes/index.tsx';
 import * as $info from './routes/info.tsx';
 import * as $note_bash_post_BackupVolume from './routes/note/bash/post-BackupVolume.tsx';
@@ -34,6 +35,7 @@ import * as $Utility_Info_getDeviceInfo from './islands/Utility/Info/getDeviceIn
 import * as $Utility_Info_getPlaceInfo from './islands/Utility/Info/getPlaceInfo.tsx';
 import * as $Utility_Info_getTimeInfo from './islands/Utility/Info/getTimeInfo.tsx';
 import * as $Utility_alignDigit from './islands/Utility/alignDigit.tsx';
+import * as $Utility_concatWords from './islands/Utility/concatWords.tsx';
 import * as $Utility_getSha256 from './islands/Utility/getSha256.tsx';
 import * as $Utility_getTimeDisplay from './islands/Utility/getTimeDisplay.tsx';
 import * as $Utility_normalizeVariableName from './islands/Utility/normalizeVariableName.tsx';
@@ -45,6 +47,7 @@ const manifest = {
         './routes/_app.tsx': $_app,
         './routes/api/getSha256.ts': $api_getSha256,
         './routes/api/help.ts': $api_help,
+        './routes/function/joke.tsx': $function_joke,
         './routes/index.tsx': $index,
         './routes/info.tsx': $info,
         './routes/note/bash/post-BackupVolume.tsx': $note_bash_post_BackupVolume,
@@ -75,6 +78,7 @@ const manifest = {
         './islands/Utility/Info/getPlaceInfo.tsx': $Utility_Info_getPlaceInfo,
         './islands/Utility/Info/getTimeInfo.tsx': $Utility_Info_getTimeInfo,
         './islands/Utility/alignDigit.tsx': $Utility_alignDigit,
+        './islands/Utility/concatWords.tsx': $Utility_concatWords,
         './islands/Utility/getSha256.tsx': $Utility_getSha256,
         './islands/Utility/getTimeDisplay.tsx': $Utility_getTimeDisplay,
         './islands/Utility/normalizeVariableName.tsx': $Utility_normalizeVariableName,

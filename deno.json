@@ -4,9 +4,9 @@
         "check": "deno fmt --check && deno lint && deno check **/*.ts && deno check **/*.tsx",
         "cli": "echo \"import '\\$fresh/src/dev/cli.ts'\" | deno run --unstable -A -",
         "manifest": "deno task cli manifest $(pwd)",
-        "start": "deno run -A --watch=static/,routes/ dev.ts",
-        "build": "deno run -A dev.ts build",
-        "preview": "deno run -A main.ts",
+        "start": "deno run -A --watch=static/,routes/ --location=http://localhost:8000/ --allow-env dev.ts",
+        "build": "deno run -A --allow-env dev.ts build",
+        "preview": "deno run -A --allow-env main.ts",
         "update": "deno run -A -r https://fresh.deno.dev/update ."
     },
     "fmt": {
@@ -35,7 +35,11 @@
         "tailwindcss": "npm:tailwindcss@3.4.1",
         "tailwindcss/": "npm:/tailwindcss@3.4.1/",
         "tailwindcss/plugin": "npm:/tailwindcss@3.4.1/plugin.js",
-        "$std/": "https://deno.land/std@0.211.0/"
+        "$std/": "https://deno.land/std@0.211.0/",
+        "@userDatabase": "./utils/userDatabase.ts",
+        "@jokeDatabase": "./utils/jokeDatabase.ts",
+        "postgress": "https://deno.land/x/postgres@v0.19.3/mod.ts",
+        "dotenv/": "https://deno.land/x/dotenv@v3.2.2/"
     },
     "compilerOptions": {
         "jsx": "react-jsx",

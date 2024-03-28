@@ -5,7 +5,7 @@ import { FrameBox, FrameCard, frameObjectProps } from './FrameObject.tsx';
 import { frameOption } from '../../../components/Original/Frame/FrameData.tsx';
 
 type frameStyle = 'card' | 'box';
-type frameType = 'minimize' | 'setMinimize' | 'maximize' | 'setMaximize' | 'hide' | 'setHide' | 'fold' | 'setFold' | 'close' | 'setClose';
+type frameType = 'minimize' | 'setMinimize' | 'maximize' | 'setMaximize' | 'hide' | 'setHide' | 'fold' | 'setFold' | 'close' | 'setClose' | '';
 
 export type frameProps = {
     title?: string;

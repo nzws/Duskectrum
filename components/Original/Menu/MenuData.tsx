@@ -5,6 +5,16 @@ export const menuData: any = [
         content: '/',
     },
     {
+        name: 'Function',
+        isOpen: true,
+        content: [
+            {
+                name: 'Joke',
+                content: '/function/joke',
+            },
+        ],
+    },
+    {
         name: 'Note',
         isOpen: true,
         content: [
