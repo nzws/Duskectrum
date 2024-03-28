@@ -1,4 +1,4 @@
-import getClient from './getClient.tsx';
+import getClient from './database.ts';
 import { getUserDataByPass } from '@userDatabase';
 
 export interface jokeData {
@@ -18,12 +18,9 @@ const normalizeJokeData = (rec: any) => {
     };
 };
 
-const client = getClient();
-
-await client.connect();
-
 export const getAllJokeData = async () => {
     try {
+        const client = await getClient();
         const res = await client.queryObject<jokeData>('select * from joke order by time desc');
 
         return res.rows.map((record) => normalizeJokeData(record));
@@ -36,6 +33,7 @@ export const getAllJokeData = async () => {
 
 export const getJokeDataById = async (id: string) => {
     try {
+        const client = await getClient();
         const res = await client.queryObject<jokeData>('select * from joke where joke_id = $1', [id]);
 
         if (res.rowCount === 0) return null;
@@ -50,6 +48,7 @@ export const getJokeDataById = async (id: string) => {
 
 export const postJoke = async (rec: Pick<jokeData, 'userId' | 'content'>, pass: string) => {
     try {
+        const client = await getClient();
         const userData = await getUserDataByPass(pass);
 
         if (!userData || userData.id !== rec.userId) return null;

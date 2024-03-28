@@ -1,4 +1,4 @@
-import getClient from './getClient.tsx';
+import getClient from './database.ts';
 
 const publicColumn = 'id, name';
 
@@ -15,12 +15,9 @@ const normalizeUserData = (rec: any) => {
     };
 };
 
-const client = getClient();
-
-await client.connect();
-
 export const getAllUserData = async () => {
     try {
+        const client = await getClient();
         const res = await client.queryObject<userData>(`select ${publicColumn} from account`);
 
         return res.rows.map((record) => normalizeUserData(record));
@@ -33,6 +30,7 @@ export const getAllUserData = async () => {
 
 export const getUserDataById = async (id: string) => {
     try {
+        const client = await getClient();
         const res = await client.queryObject<userData>(`select ${publicColumn} from account where id = $1`, [id]);
 
         if (res.rowCount === 0) return null;
@@ -47,6 +45,7 @@ export const getUserDataById = async (id: string) => {
 
 export const getUserDataByPass = async (pass: string) => {
     try {
+        const client = await getClient();
         const res = await client.queryObject<userData>(`select ${publicColumn} from account where pass = $1`, [pass]);
 
         if (res.rowCount === 0) return null;
